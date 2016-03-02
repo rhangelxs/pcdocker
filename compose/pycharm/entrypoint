@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 # creating user. Default ist user=docker, pass=changeme
 # can be changed by setting ENV Variables SFTP_USER, SFTP_PASS
 user="${SFTP_USER}"
