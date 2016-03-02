@@ -16,8 +16,8 @@ export DATABASE_URL=postgres://$POSTGRES_ENV_POSTGRES_USER:$POSTGRES_ENV_POSTGRE
 export CELERY_BROKER_URL=$DJANGO_CACHE_URL
 
 if [ -z "${GITHUB_CLONE_URL}" ]; then
-    rm -rf /app/pcdocker
-    git clone ${GITHUB_CLONE_URL} /app/pcdocker
+    rm -rf /app/pcdocker/pcdocker
+    git clone ${GITHUB_CLONE_URL} /app/pcdocker/pcdocker
 fi
 
 if [ "${INSTALL_ENTRYPOINT_PIP}" == "true" ]; then
