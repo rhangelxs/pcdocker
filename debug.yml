@@ -7,7 +7,7 @@ postgres:
   env_file: .env
 
 debug:
-  build: compose/pycharm/
+  image: rhangelxs/pcdocker_debug
   command: python -c "import signal; signal.pause()"
   ports:
    - "8000:8000"
