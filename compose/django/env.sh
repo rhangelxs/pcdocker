@@ -16,9 +16,11 @@ export CELERY_BROKER_URL=$DJANGO_CACHE_URL
 
 if [ -n "${GITHUB_CLONE_URL}" ]; then
     rm -rf /app/pcdocker/pcdocker
-    git clone ${GITHUB_CLONE_URL} /app/pcdocker/pcdocker
+    git clone "${GITHUB_CLONE_URL}" /app/pcdocker/pcdocker
+
+    if [ "${INSTALL_ENTRYPOINT_PIP}" == "true" ]; then
+        pip install -r /app/pcdocker/pcdocker/requirements.txt
+    fi
 fi
 
-if [ "${INSTALL_ENTRYPOINT_PIP}" == "true" ]; then
-    pip install -r /app/pcdocker/pcdocker/requirements.txt
-fi
+
