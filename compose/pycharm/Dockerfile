@@ -20,7 +20,10 @@ RUN mkdir -p /var/run/sshd
 COPY sshd_config /etc/ssh/sshd_config
 ADD .ssh_keys_to_docker/id_rsa.pub /ssh_id_rsa.pub
 
-COPY entrypoint /
+ADD entrypoint /
+RUN chmod +x /entrypoint
+
+WORKDIR /app/pcdocker
 
 EXPOSE 22
 EXPOSE 8000
