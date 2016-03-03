@@ -11,9 +11,9 @@ RUN pip install -r /requirements/local.txt
 RUN groupadd -r django && useradd -r -g django django
 ADD . /app
 
-RUN apt-get update && apt-get install nodejs npm ruby-compass --yes && apt-get autoremove && apt-get clean
-RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs
-RUN update-alternatives --install /usr/local/bin/python python /usr/bin/python
+RUN apt-get update && apt-get install nodejs npm ruby-compass --yes && apt-get autoremove --yes && apt-get clean
+RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+#RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python 10
 
 RUN npm install -g grunt grunt-cli
 
