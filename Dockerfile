@@ -13,6 +13,7 @@ ADD . /app
 
 RUN apt-get update && apt-get install nodejs npm ruby-compass --yes && apt-get autoremove && apt-get clean
 RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs
+RUN update-alternatives --install /usr/local/bin/python python /usr/bin/python
 
 RUN npm install -g grunt grunt-cli
 
