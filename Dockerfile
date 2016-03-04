@@ -15,7 +15,10 @@ ADD . /app
 RUN apt-get update && apt-get install nodejs npm ruby-compass --yes && apt-get autoremove --yes && apt-get clean
 # Fixing node path, set /usr/bin/node to /usr/bin/nodejs
 RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
-#RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python 10
+
+# Nodejs package require own python, but it's already intalled
+# Fix default python link to /usr/local/bin/python
+RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python 10
 
 RUN npm install -g grunt grunt-cli
 
