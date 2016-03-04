@@ -23,8 +23,10 @@ ADD .ssh_keys_to_docker/id_rsa.pub /ssh_id_rsa.pub
 ADD entrypoint /
 RUN chmod +x /entrypoint
 
-ADD https://github.com/madesst/docker-python-3.5/raw/master/pycharm-debug-py3k.egg /opt/.pycharm_helpers/pycharm-debug-py3k.egg
+#ADD https://github.com/madesst/docker-python-3.5/raw/master/pycharm-debug-py3k.egg /opt/.pycharm_helpers/pycharm-debug-py3k.egg
 ADD https://s3.eu-central-1.amazonaws.com/cloudify-dev/remote-debug/pycharm-debug.egg /opt/.pycharm_helpers/pycharm-debug.egg
+RUN python -m zipfile -e /opt/.pycharm_helpers/pycharm-debug.egg /opt/.pycharm_helpers && chown -R "${SFTP_USER}" /opt/.pycharm_helpers
+
 
 WORKDIR /app/pcdocker
 
