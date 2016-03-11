@@ -20,6 +20,7 @@ if [ -n "${GITHUB_CLONE_URL}" ]; then
     fi          
     cd /tmp
     git clone "${GITHUB_CLONE_URL}" pcdocker
+    chmod -R +w /tmp/pcdocker/.git
     rm -rf /app/pcdocker
     mv /tmp/pcdocker /app/pcdocker
 
