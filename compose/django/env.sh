@@ -17,9 +17,8 @@ export CELERY_BROKER_URL=$DJANGO_CACHE_URL
 if [ -n "${GITHUB_CLONE_URL}" ]; then
     if [ -d "/tmp/pcdocker" ]; then
         rm -rf /tmp/pcdocker
-    fi          
-    cd /tmp
-    git clone "${GITHUB_CLONE_URL}" pcdocker
+    fi
+    git clone "${GITHUB_CLONE_URL}" /tmp/pcdocker
     chmod -R +w /tmp/pcdocker/.git
     rm -rf /app/pcdocker
     mv /tmp/pcdocker /app/pcdocker
