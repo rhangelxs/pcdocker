@@ -14,6 +14,8 @@ export DATABASE_URL=postgres://$POSTGRES_ENV_POSTGRES_USER:$POSTGRES_ENV_POSTGRE
 
 export CELERY_BROKER_URL=$DJANGO_CACHE_URL
 
+export PYTHONPATH="${PYTHONPATH}:/app"
+
 if [ -n "${GITHUB_CLONE_URL}" ]; then
 
     if [ -d "/tmp/pcdocker" ]; then
