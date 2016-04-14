@@ -15,6 +15,8 @@ export DATABASE_URL=postgres://$POSTGRES_ENV_POSTGRES_USER:$POSTGRES_ENV_POSTGRE
 export CELERY_BROKER_URL=$DJANGO_CACHE_URL
 
 if [ -n "${GITHUB_CLONE_URL}" ]; then
+    old_pwd = $(pwd)
+    cd /tmp
     if [ -d "/tmp/pcdocker" ]; then
         rm -rf /tmp/pcdocker
     fi
@@ -26,4 +28,6 @@ if [ -n "${GITHUB_CLONE_URL}" ]; then
     if [ "${INSTALL_ENTRYPOINT_PIP}" == "true" ]; then
         pip install -r /app/pcdocker/requirements.txt
     fi
+
+    cd old_pwd
 fi
