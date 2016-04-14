@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="docker_pcdocker" />
+  <component name="PublishConfigData" serverName="docker_pcdocker (project level)">
+    <serverData>
+      <paths name="docker_pcdocker (project level)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/app" local="$PROJECT_DIR$/pcdocker" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
 </project>

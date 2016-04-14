@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="ce16d0a1-6207-4682-89cf-b5cca576c85c" name="docker_pcdocker" url="http://192.168.99.100">
+      <webServer id="a6769570-dc4f-4580-b5c3-316a21df3dac" name="docker_pcdocker (project level)" url="http://192.168.99.100">
         <fileTransfer host="192.168.99.100" port="2222" privateKey="$PROJECT_DIR$/compose/pycharm/.ssh_keys_to_docker/id_rsa" accessType="SFTP" username="docker_pcdocker" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
