@@ -27,8 +27,8 @@ if [ -n "${GITHUB_CLONE_URL}" ]; then
     rm -rf /app/pcdocker/*
     mv /tmp/pcdocker/* /app/pcdocker/
 
-    if [ "${INSTALL_ENTRYPOINT_PIP}" == "true" ]; then
-        pip install -r /app/pcdocker/requirements.txt
-    fi
+fi
 
+if [ "${INSTALL_ENTRYPOINT_PIP}" == "true" ]; then
+        pip install -r /app/pcdocker/requirements.txt
 fi
